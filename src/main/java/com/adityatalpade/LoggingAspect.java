@@ -12,17 +12,17 @@ import org.aspectj.lang.annotation.Before;
  */
 @Aspect
 public class LoggingAspect {
-    @Before("execution(public void draw(..))")
+    @Before("execution(public void com.adityatalpade.Shape.draw(..))")
     public void logBefore(JoinPoint joinPoint) {
         System.out.println(String.format("Before %s executes", joinPoint.getSignature().toLongString()));
     }
 
-    @After("execution(public void draw(..))")
+    @After("execution(public void com.adityatalpade.Shape.draw(..))")
     public void logAfter(JoinPoint joinPoint) {
         System.out.println(String.format("After %s executes", joinPoint.getSignature().toLongString()));
     }
 
-    @Around("execution(public void draw(..))")
+    @Around("execution(public void com.adityatalpade.Shape.draw(..))")
     public void logAround(ProceedingJoinPoint joinPoint) throws Throwable {
         System.out.println(String.format("Before Around %s executes", joinPoint.getSignature().toLongString()));
         long before = System.currentTimeMillis();
