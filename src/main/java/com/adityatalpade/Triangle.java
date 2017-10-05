@@ -1,18 +1,25 @@
 package com.adityatalpade;
 
+import java.util.List;
+
 /**
- * Created by sunilnt on 05/10/17.
+ * Created by sunilnt on 27/09/17.
  */
 public class Triangle implements Shape {
 
-    private final String type;
+    private List<Point> points;
 
-    public Triangle(String type) {
-        this.type = type;
+    public List<Point> getPoints() {
+        return points;
     }
 
-    @Override
+    public void setPoints(List<Point> points) {
+        this.points = points;
+    }
+
     public void draw() {
-        System.out.println("Triangle of type " + type);
+        for (Point point : points) {
+            System.out.println("point = " + point);
+        }
     }
 }
