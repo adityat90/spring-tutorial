@@ -2,27 +2,28 @@ package com.adityatalpade;
 
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.ProceedingJoinPoint;
-import org.aspectj.lang.annotation.After;
-import org.aspectj.lang.annotation.Around;
-import org.aspectj.lang.annotation.Aspect;
-import org.aspectj.lang.annotation.Before;
+import org.aspectj.lang.annotation.*;
 
 /**
  * Created by sunilnt on 06/10/17.
  */
 @Aspect
 public class LoggingAspect {
-    @Before("execution(public void com.adityatalpade.Shape.draw(..))")
+
+    @Pointcut("execution(public void com.adityatalpade.Shape.draw(..))")
+    private void draw(){}
+
+    @Before("draw()")
     public void logBefore(JoinPoint joinPoint) {
         System.out.println(String.format("Before %s executes", joinPoint.getSignature().toLongString()));
     }
 
-    @After("execution(public void com.adityatalpade.Shape.draw(..))")
+    @After("draw()")
     public void logAfter(JoinPoint joinPoint) {
         System.out.println(String.format("After %s executes", joinPoint.getSignature().toLongString()));
     }
 
-    @Around("execution(public void com.adityatalpade.Shape.draw(..))")
+    @Around("draw()")
     public void logAround(ProceedingJoinPoint joinPoint) throws Throwable {
         System.out.println(String.format("Before Around %s executes", joinPoint.getSignature().toLongString()));
         long before = System.currentTimeMillis();
