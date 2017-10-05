@@ -3,7 +3,7 @@
         "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
 
 <beans>
-    <bean id="triangle" class="com.adityatalpade.Triangle" autowire="byName">
+    <bean id="triangle" class="com.adityatalpade.Triangle" autowire="constructor">
     </bean>
 
     <bean id="pointA" class="com.adityatalpade.Point">
