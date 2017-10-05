@@ -3,9 +3,10 @@
         "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
 
 <beans>
-    <bean id="shape" class="com.adityatalpade.Triangle" autowire="constructor" scope="singleton">
+    <bean id="triangle" class="com.adityatalpade.Triangle" autowire="constructor" scope="singleton">
     </bean>
-    <bean id="circle" class="com.adityatalpade.Circle" autowire="constructor" scope="singleton">
+    <bean id="shape" class="com.adityatalpade.Circle" scope="singleton">
+        <property name="center" ref="pointA"></property>
     </bean>
 
     <bean id="pointA" class="com.adityatalpade.Point">

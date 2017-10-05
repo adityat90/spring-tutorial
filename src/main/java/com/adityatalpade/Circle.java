@@ -5,18 +5,14 @@ package com.adityatalpade;
  */
 public class Circle implements Shape {
 
-    private Point pointA;
+    private Point center;
 
-    public Circle(Point pointA) {
-        this.pointA = pointA;
-    }
-
-    public void setPointA(Point pointA) {
-        this.pointA = pointA;
+    public void setCenter(Point center) {
+        this.center = center;
     }
 
     @Override
     public void draw() {
-        System.out.println("pointA = " + pointA);
+        System.out.println("center = " + center);
     }
 }
