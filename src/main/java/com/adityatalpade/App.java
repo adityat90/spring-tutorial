@@ -1,11 +1,15 @@
 package com.adityatalpade;
 
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
 /**
  * Hello world!
  */
 public class App {
     public static void main(String[] args) {
-        Triangle triangle = new Triangle("Equilateral");
-        triangle.draw();
+        ApplicationContext applicationContext = new ClassPathXmlApplicationContext("spring.xml");
+        Shape shape = applicationContext.getBean("triangle", Shape.class);
+        shape.draw();
     }
 }
