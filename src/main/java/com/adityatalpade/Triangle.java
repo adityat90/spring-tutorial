@@ -1,25 +1,28 @@
 package com.adityatalpade;
 
-import java.util.List;
-
 /**
  * Created by sunilnt on 27/09/17.
  */
 public class Triangle implements Shape {
+    private Point pointA;
+    private Point pointB;
+    private Point pointC;
 
-    private List<Point> points;
-
-    public List<Point> getPoints() {
-        return points;
+    public void setPointA(Point pointA) {
+        this.pointA = pointA;
     }
 
-    public void setPoints(List<Point> points) {
-        this.points = points;
+    public void setPointB(Point pointB) {
+        this.pointB = pointB;
+    }
+
+    public void setPointC(Point pointC) {
+        this.pointC = pointC;
     }
 
     public void draw() {
-        for (Point point : points) {
-            System.out.println("point = " + point);
-        }
+        System.out.println("pointA = " + pointA);
+        System.out.println("pointB = " + pointB);
+        System.out.println("pointC = " + pointC);
     }
 }
