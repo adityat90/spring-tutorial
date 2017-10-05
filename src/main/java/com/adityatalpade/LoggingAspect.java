@@ -10,7 +10,7 @@ import org.aspectj.lang.annotation.*;
 @Aspect
 public class LoggingAspect {
 
-    @Pointcut("execution(public void com.adityatalpade.Shape.draw(..))")
+    @Pointcut("within(com.adityatalpade.Shape+)")
     private void draw(){}
 
     @Before("draw()")
