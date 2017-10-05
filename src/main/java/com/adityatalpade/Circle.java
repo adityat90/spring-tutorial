@@ -13,6 +13,11 @@ public class Circle implements Shape {
 
     @Override
     public void draw() {
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         System.out.println("center = " + center);
     }
 }
